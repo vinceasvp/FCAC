@@ -26,7 +26,9 @@ The detailed information of the LS-100 dataset is given below.
 LibriSpeech is a corpus of approximately 1000 hours of 16kHz read English speech, prepared by Vassil Panayotov with the assistance of Daniel Povey. The data is derived from read audiobooks from the LibriVox project, and has been carefully segmented and aligned. We find that the subset ``train-clean-100`` of   Librispeech is enough for our study, so we constructed the LS-100 dataset using partial samples from the Librispeech as the source materials. To be specific, we first concatenate all the speakers' speech clips into a long speech, and then select the 100 speakers with the longest duration to cut their voices into two second speech. You can download the Librispeech from [here](https://www.openslr.org/12/).
 
 1. Download [dataset](https://www.openslr.org/resources/12/train-clean-100.tar.gz) and extract the files.
+
 2. Transfer the format of audio files. Move the script ``normalize-resample.sh`` to the root dirctory of extracted folder, and run the command ``bash normalize-resample.sh``.
+
 3. Construct LS-100 dataset.
    
    ```
@@ -36,3 +38,9 @@ LibriSpeech is a corpus of approximately 1000 hours of 16kHz read English speech
 ## Code
 
 To be sorted...
+
+## Acknowledgment
+
+Our project references the codes in the following repos.
+
+- [FCAC_datasets](https://github.com/chester-w-xie/FCAC_datasets)
