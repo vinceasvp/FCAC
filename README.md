@@ -6,20 +6,20 @@ Few-shot class-incremental audio  classification, which can continually recogniz
 
 To study the Few-shot Class-incremental Audio Classification (FCAC) problem, we constructed the LS-100 dataset, NSynth-100 dataset and FSC-89 dataset using partial samples from the Librispeech dataset, the [NSynth](https://magenta.tensorflow.org/datasets/nsynth) dataset and the [FSD-MIX-CLIPS](https://zenodo.org/record/5574135#.YWyINEbMIWo) dataset as the source materials, respectively.
 
-Tanks to Wei Xie, one of members of our team, you can find more information of NSynth-100 dataset and FSC-89 dataset from [here](https://github.com/chester-w-xie/FCAC_datasets).
+Wei Xie, one of our team members, constructed the NSynth-100 dataset and FSC-89 dataset. The detailed information of these two datasets is [here](https://github.com/chester-w-xie/FCAC_datasets).
 
-Below here is some information of LS-100 dataset.
+The detailed information of the LS-100 dataset is given below.
 
 ### Statistics on the LS-100 dataset
 
-|                                                                |                     LS-100                     |
-| :-------------------------------------------------------------: | :---------------------------------------------: |
-|                          Type of audio                          |                     Speech                     |
-|                         Num. of classes                         | 100 (60 of base classes, 40 of novel classes) |
-| Num. of training / validation / testing samples per base class |                500 / 150 / 100                |
-| Num. of training / validation / testing samples per novel class |                500 / 150 / 100                |
-|                     Duration of the sample                     |                All in 2 seconds                |
-|                       Sampling frequency                       |                  All in 16K Hz                  |
+|                                                                 | LS-100                                        |
+|:---------------------------------------------------------------:|:---------------------------------------------:|
+| Type of audio                                                   | Speech                                        |
+| Num. of classes                                                 | 100 (60 of base classes, 40 of novel classes) |
+| Num. of training / validation / testing samples per base class  | 500 / 150 / 100                               |
+| Num. of training / validation / testing samples per novel class | 500 / 150 / 100                               |
+| Duration of the sample                                          | All in 2 seconds                              |
+| Sampling frequency                                              | All in 16K Hz                                 |
 
 ### Preparation of the LS-100 dataset
 
@@ -28,6 +28,7 @@ LibriSpeech is a corpus of approximately 1000 hours of 16kHz read English speech
 1. Download [dataset](https://www.openslr.org/resources/12/train-clean-100.tar.gz) and extract the files.
 2. Transfer the format of audio files. Move the script ``normalize-resample.sh`` to the root dirctory of extracted folder, and run the command ``bash normalize-resample.sh``.
 3. Construct LS-100 dataset.
+   
    ```
    python data/LS100/construct_LS100.py --data_dir DATA_DIR --duration_json data/librispeech/spk_total_duration.json --single_spk_dir SINGLE_SPK_DIR --num_select_spk 100 --spk_segment_dir SPK_SEGMENT_DIR --csv_path CSV_PATH --spk_mapping_path SPK_MAPPING_PATH
    ```
