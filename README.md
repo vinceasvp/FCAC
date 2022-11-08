@@ -37,7 +37,7 @@ LibriSpeech is a corpus of approximately 1000 hours of 16kHz read English speech
 
 ## Code
 
-To be sorted...
+We are trying our best to finish sorting out the code as soon as possible.
 
 ## Acknowledgment
 
