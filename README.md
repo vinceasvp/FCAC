@@ -4,7 +4,8 @@ Few-shot class-incremental audio  classification, which can continually recogniz
 
 ## Datasets
 
-To study the Few-shot Class-incremental Audio Classification (FCAC) problem, we constructed the LS-100 dataset, NSynth-100 dataset and FSC-89 dataset using partial samples from the Librispeech dataset, the [NSynth](https://magenta.tensorflow.org/datasets/nsynth) dataset and the [FSD-MIX-CLIPS](https://zenodo.org/record/5574135#.YWyINEbMIWo) dataset as the source materials, respectively.
+To study the Few-shot Class-incremental Audio Classification (FCAC) problem, three datasets of LS-100 dataset, NSynth-100 dataset and FSC-89 dataset are constructed by 
+choosing samples from audio corpora of the [Librispeech](https://www.openslr.org/12/) dataset, the [NSynth](https://magenta.tensorflow.org/datasets/nsynth) dataset and the [FSD-MIX-CLIPS](https://zenodo.org/record/5574135#.YWyINEbMIWo) dataset respectively.
 
 Wei Xie, one of our team members, constructed the NSynth-100 dataset and FSC-89 dataset. The detailed information of these two datasets is [here](https://github.com/chester-w-xie/FCAC_datasets).
 
@@ -41,20 +42,18 @@ LibriSpeech is a corpus of approximately 1000 hours of 16kHz read English speech
 
 We are trying our best to finish sorting out the code as soon as possible.
 
-
-
 ## Contact
 
 Yanxiong Li (eeyxli@scut.edu.cn) and Wenchang Cao (wenchangcao98@163.com)
+
+
 School of Electronic and Information Engineering, South China University of Technology, Guangzhou, China
-
-
 
 ## Citation
 
 Please cite our paper if you find the codes and datasets are useful for your research.
+
+
 Y. Li, W. Cao, W. Xie, J. Li, and E. Benetos, "Few-shot Class-incremental Audio Classification Using Dynamically Expanded Classifier with Self-attention Modified Prototypes", Submitted to IEEE TMM.
-
-
 
 ## 
