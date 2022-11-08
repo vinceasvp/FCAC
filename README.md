@@ -1,4 +1,4 @@
-# FCAC
+# Few-shot Class-incremental Audio Classification Using Dynamically Expanded Classifier with Self-attention Modified Prototypes
 
 Few-shot class-incremental audio  classification, which can continually recognize novel audio classes without forgetting old ones
 
@@ -35,12 +35,26 @@ LibriSpeech is a corpus of approximately 1000 hours of 16kHz read English speech
    python data/LS100/construct_LS100.py --data_dir DATA_DIR --duration_json data/librispeech/spk_total_duration.json --single_spk_dir SINGLE_SPK_DIR --num_select_spk 100 --spk_segment_dir SPK_SEGMENT_DIR --csv_path CSV_PATH --spk_mapping_path SPK_MAPPING_PATH
    ```
 
+## 
+
 ## Code
 
 We are trying our best to finish sorting out the code as soon as possible.
 
-## Acknowledgment
 
-Our project references the codes in the following repos.
 
-- [FCAC_datasets](https://github.com/chester-w-xie/FCAC_datasets)
+## Contact
+
+Yanxiong Li (eeyxli@scut.edu.cn) and Wenchang Cao (wenchangcao98@163.com)
+School of Electronic and Information Engineering, South China University of Technology, Guangzhou, China
+
+
+
+## Citation
+
+Please cite our paper if you find the codes and datasets are useful for your research.
+Y. Li, W. Cao, W. Xie, J. Li, and E. Benetos, "Few-shot Class-incremental Audio Classification Using Dynamically Expanded Classifier with Self-attention Modified Prototypes", Submitted to IEEE TMM.
+
+
+
+## 
