@@ -1,6 +1,7 @@
 # Few-shot Class-incremental Audio Classification Using Dynamically Expanded Classifier with Self-attention Modified Prototypes
 
-Few-shot class-incremental audio  classification, which can continually recognize novel audio classes without forgetting old ones
+This repository contains the introductions to the datasets and codes used in our paper, titled "Few-shot Class-incremental Audio Classification Using Dynamically Expanded Classifier with Self-attention Modified Prototypes
+" (as shown in the section of Citation).
 
 ## Datasets
 
@@ -46,13 +47,11 @@ We are trying our best to finish sorting out the code as soon as possible.
 
 Yanxiong Li (eeyxli@scut.edu.cn) and Wenchang Cao (wenchangcao98@163.com)
 
-
 School of Electronic and Information Engineering, South China University of Technology, Guangzhou, China
 
 ## Citation
 
 Please cite our paper if you find the codes and datasets are useful for your research.
-
 
 Y. Li, W. Cao, W. Xie, J. Li, and E. Benetos, "Few-shot Class-incremental Audio Classification Using Dynamically Expanded Classifier with Self-attention Modified Prototypes", Submitted to IEEE TMM.
 
