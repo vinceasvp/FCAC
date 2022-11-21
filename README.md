@@ -45,6 +45,12 @@ LibriSpeech is a corpus of approximately 1000 hours of 16kHz read English speech
 python train.py -project STDU -dataroot DATAROOT -dataset librispeech -config ./configs/STDU_librispeechPQA_outerAP.yml -gpu 1
 ```
 
+## Acknowledgment
+
+Our project references the codes in the following repos.
+
+- [CEC](https://github.com/icoz69/CEC-CVPR2021)
+
 ## Contact
 
 Yanxiong Li (eeyxli@scut.edu.cn) and Wenchang Cao (wenchangcao98@163.com)
