@@ -6,27 +6,24 @@ train:
   num_novel: 40
   num_all: 100
   start_session: 0
-  test_times: 1
+  test_times: 100
   seq_sample: false
-  tmp_train: false
+  tmp_train: true
   model_dir:
-    sis_model_dir: null # for sis
-    tmp_model_dir: null # SIS temp model paht
+    stdu_model_dir: null # for stdu final model
+    tmp_model_dir: null # stdu temp model paht
     s0_model_dir: null # session 0's final model path
     sf_model_dir: null # final session's model path
   seed: 0
   epochs:
-    epochs_std: 1
-    epochs_sis_base: 1
-    epochs_cec_base: 1
-    epochs_new: 1
+    epochs_std: 10 # epochs for standard train
+    epochs_stdu_base: 1 # epochs for incremental train
+    epochs_new: 10 # epochs for incremental session
   lr:
-    lr_std: !!float 0.1
-    lr_base: !!float 0.1
-    lr_new: !!float 0.1
-    lr_cec_base: 0.0002
-    lr_sis_base: 0.0002
-    lrg: !!float 0.0002  #lr for graph attention
+    lr_std: !!float 0.1 # lr for standard train
+    lr_stdu_base: !!float 0.0002 # lr for encoder in increment train stage
+    lrg: !!float 0.0002  # lr for graph attention
+    lr_new: !!float 0.1 # lr for incremental session
   scheduler: 
     schedule: Step # ['Step', 'Milestone']
     milestones: [40, 80]
@@ -40,7 +37,7 @@ train:
     base_mode: ft_cos  # ['ft_dot', 'ft_cos']
     new_mode: ft_cos  # ['ft_dot', 'ft_cos', 'avg_cos'] ft_dot means using linear classifier, ft_cos means using cosine classifier, avg_cos means using average data embedding and cosine classifier
   strategy:
-    not_data_init: false
+    data_init: true
     set_no_val: false
     seq_sample: false
   episode:
@@ -54,7 +51,7 @@ train:
     num_workers: 8
     train_batch_size: 128
     test_batch_size: 100
-  STDU:
+  stdu:
     num_tmpb: 35
     num_tmpi: 25
     num_tmps: 14
@@ -63,11 +60,18 @@ train:
     ap:
       use_ap: true
       ap_type: outer
+      ap_on_test: false
+    anchor:
+      use_anchor: false
+      anchor_type: base_anchor
+    proto:
+      weighted: false
+      type: mmt  # ['mmt', 'res']
   extractor:
     sample_rate: 16000
     window_size: 400
     hop_size: 160
-    mel_bins: 80
+    mel_bins: 128
     fmin: 0
     fmax: 8000
     window: hann

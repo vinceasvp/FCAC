@@ -5,7 +5,7 @@ import yaml
 import logging
 MODEL_DIR=None
 DATA_DIR = 'YOUR DATA DIR'
-PROJECT='STDU'
+PROJECT='stdu'
 
 def dict2namespace(dicts):
     for i in dicts:

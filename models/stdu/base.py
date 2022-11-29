@@ -1,6 +1,5 @@
 import abc
 from copy import deepcopy
-import imp
 import os.path as osp
 import os
 import time
@@ -50,8 +49,20 @@ class Trainer(object, metaclass=abc.ABCMeta):
         self.sess_acc_dict = {}
 
     def set_up_datasets(self):
-        if self.args.dataset == 'librispeech':
+        if self.args.dataset == 'FMC':
+            import dataloader.FMC.FMC as Dataset
+        elif self.args.dataset == 'nsynth-100':
+            import dataloader.nsynth.nsynth as Dataset
+        elif self.args.dataset == 'nsynth-200':
+            import dataloader.nsynth.nsynth as Dataset
+        elif self.args.dataset == 'nsynth-300':
+            import dataloader.nsynth.nsynth as Dataset
+        elif self.args.dataset == 'nsynth-400':
+            import dataloader.nsynth.nsynth as Dataset
+        elif self.args.dataset == 'librispeech':
             import dataloader.librispeech.librispeech as Dataset
+        elif self.args.dataset in ['f2n', 'f2l', 'n2f', 'n2l', 'l2f', 'l2n']:
+            import dataloader.s2s.s2s as Dataset
         self.args.Dataset=Dataset
 
     def set_save_path(self):
@@ -107,7 +118,7 @@ class Trainer(object, metaclass=abc.ABCMeta):
         torch.save(dict(params=self.model.state_dict()), best_model_dir)
         
     def replace_base_fc(self, trainset, model):
-        num_base_class = self.args.sis.num_tmpb if self.args.tmp_train else self.args.num_base
+        num_base_class = self.args.stdu.num_tmpb if self.args.tmp_train else self.args.num_base
         model = model.eval()
         assert len(set(trainset.targets)) == num_base_class
         trainloader = torch.utils.data.DataLoader(dataset=trainset, batch_size=128,
