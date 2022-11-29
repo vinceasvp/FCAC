@@ -1,7 +1,7 @@
 import numpy as np
 from sklearn.utils import shuffle
 import torch
-from .sampler import DFSLTrainCategoriesSampler, CategoriesSampler, MineTrainCategoriesSampler, SupportsetSampler, TrueIncreTrainCategoriesSampler
+from .sampler import CategoriesSampler, SupportsetSampler, TrueIncreTrainCategoriesSampler
 
 def get_dataloader(args, session):
     if session == 0:
